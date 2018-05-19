@@ -1,0 +1,19 @@
+<resources>
+
+    <!--APPLICATION STRINGS-->
+    <string name="app_name">Device Info</string>
+
+    <!--GENERAL STRINGS-->
+    <string name="manufacturer">MANUFACTURER: </string>
+    <string name="model">MODEL: </string>
+    <string name="memory">MEMORY: </string>
+    <string name="version">VERSION: </string>
+    <string name="api_level">API LEVEL: </string>
+    <string name="max_texture_limit">MAX TEXTURE LIMIT: </string>
+
+    <!--VALUE STRINGS-->
+    <string name="memory_value">%1$d MB</string>
+    <string name="android_value">Android %1$s</string>
+    <string name="api_value">API %1$d</string>
+    <string name="texture_value">%1$d x %2$d</string>
+</resources>
