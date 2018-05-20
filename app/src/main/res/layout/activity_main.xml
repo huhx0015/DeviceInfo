@@ -4,18 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.huhx0015.deviceinfo.MainActivity"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context="com.huhx0015.deviceinfo.MainActivity">
 
     <android.support.v7.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_margin="16dp"
         android:elevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,88 +18,142 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/deviceManufacturerText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="manufacturer"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/manufacturer"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/deviceManufacturerValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="$MANUFACTURER_VALUE"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/deviceManufacturerText"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/deviceModelText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="model"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp"
+                android:text="@string/model"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/deviceManufacturerText" />
 
             <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/deviceMemorySizeText"
+                android:id="@+id/deviceModelValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="memory"
+                android:text="$MODEL_VALUE"
                 android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/deviceModelText"
+                app:layout_constraintTop_toBottomOf="@+id/deviceManufacturerValue" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/deviceMemorySizeText"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/memory"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/deviceModelText" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/deviceMemorySizeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="$MEMORY_VALUE"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/deviceMemorySizeText"
+                app:layout_constraintTop_toBottomOf="@+id/deviceModelValue" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/deviceAndroidVersionText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="android version"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/version"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/deviceMemorySizeText" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/deviceAndroidVersionValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="$ANDROID_VERSION_VALUE"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/deviceAndroidVersionText"
+                app:layout_constraintTop_toBottomOf="@+id/deviceMemorySizeValue" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/deviceApiLevelText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="android api"
-                android:textColor="@android:color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/api_level"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/deviceAndroidVersionText" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/deviceApiLevelValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="$API_VALUE"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/deviceApiLevelText"
+                app:layout_constraintTop_toBottomOf="@+id/deviceAndroidVersionValue" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/deviceTextureSizeText"
@@ -117,17 +165,33 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TEXTURE SIZE"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
+                android:text="@string/max_texture_limit"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/deviceApiLevelText" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/deviceTextureSizeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:text="$TEXTURE_LIMIT_VALUE"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/deviceTextureSizeText"
+                app:layout_constraintTop_toBottomOf="@+id/deviceApiLevelValue" />
 
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
-
 
 </android.support.constraint.ConstraintLayout>

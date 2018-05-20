@@ -10,11 +10,12 @@ class MainActivity : AppCompatActivity() {
 
     /** CLASS VARIABLES ________________________________________________________________________ **/
 
-    var textureSizeLimit: Int = 0
+    var apiLevel: Int = 0
     var memorySize: Long = 0
+    var textureSizeLimit: Int = 0
+
     lateinit var deviceModel: String
     lateinit var deviceManufacturer: String
-    var apiLevel: Int = 0
     lateinit var androidVersion: String
 
     /** ACTIVITY LIFECYCLE METHODS _____________________________________________________________ **/
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initData()
+        initData(savedInstanceState)
         initText()
         setText()
     }
@@ -48,16 +49,20 @@ class MainActivity : AppCompatActivity() {
 
     /** DATA METHODS ___________________________________________________________________________ **/
 
-    private fun initData() {
-        deviceManufacturer = Build.MANUFACTURER
-        deviceModel = Build.MODEL
+    private fun initData(savedInstanceState: Bundle?) {
+        if (savedInstanceState != null) {
+            // TODO: Restore saved data here.
+        } else {
+            deviceManufacturer = Build.MANUFACTURER
+            deviceModel = Build.MODEL
 
-        memorySize = MemoryUtils.getDeviceMemorySize(this)
+            memorySize = MemoryUtils.getDeviceMemorySize(this)
 
-        apiLevel = Build.VERSION.SDK_INT
-        androidVersion = Build.VERSION.RELEASE
+            apiLevel = Build.VERSION.SDK_INT
+            androidVersion = Build.VERSION.RELEASE
 
-        textureSizeLimit = OpenGLUtils.maxSupportedTextureSize
+            textureSizeLimit = OpenGLUtils.maxSupportedTextureSize
+        }
     }
 
     /** VIEW METHODS ___________________________________________________________________________ **/
@@ -67,11 +72,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setText() {
-        deviceManufacturerText.text = deviceManufacturer
-        deviceModelText.text = deviceModel
-        deviceMemorySizeText.text = memorySize.toString()
-        deviceAndroidVersionText.text = androidVersion
-        deviceApiLevelText.text = apiLevel.toString()
-        deviceTextureSizeText.text = textureSizeLimit.toString()
+        deviceManufacturerValue.text = deviceManufacturer
+        deviceModelValue.text = deviceModel
+        deviceMemorySizeValue.text = memorySize.toString()
+        deviceAndroidVersionValue.text = androidVersion
+        deviceApiLevelValue.text = apiLevel.toString()
+        deviceTextureSizeValue.text = textureSizeLimit.toString()
     }
 }
