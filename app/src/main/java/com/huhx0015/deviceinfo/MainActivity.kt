@@ -10,13 +10,24 @@ class MainActivity : AppCompatActivity() {
 
     /** CLASS VARIABLES ________________________________________________________________________ **/
 
+    // DATA VARIABLES:
     var apiLevel: Int = 0
     var memorySize: Long = 0
     var textureSizeLimit: Int = 0
-
     lateinit var deviceModel: String
     lateinit var deviceManufacturer: String
     lateinit var androidVersion: String
+
+    // STATIC VARIABLES:
+    companion object {
+        private val TAG = MainActivity::class.java.simpleName
+        private val INSTANCE_DEVICE_MANUFACTURER = TAG + "deviceManufacturer"
+        private val INSTANCE_DEVICE_MODEL = TAG + "deviceModel"
+        private val INSTANCE_MEMORY_SIZE = TAG + "memorySize"
+        private val INSTANCE_API_LEVEL = TAG + "apiLevel"
+        private val INSTANCE_ANDROID_VERSION = TAG + "androidVersion"
+        private val INSTANCE_TEXTURE_SIZE = TAG + "textureSize"
+    }
 
     /** ACTIVITY LIFECYCLE METHODS _____________________________________________________________ **/
 
@@ -45,32 +56,38 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
         super.onSaveInstanceState(outState, outPersistentState)
+        outState?.putString(INSTANCE_DEVICE_MANUFACTURER, deviceManufacturer)
+        outState?.putString(INSTANCE_DEVICE_MODEL, deviceModel)
+        outState?.putLong(INSTANCE_MEMORY_SIZE, memorySize)
+        outState?.putInt(INSTANCE_API_LEVEL, apiLevel)
+        outState?.putString(INSTANCE_ANDROID_VERSION, androidVersion)
+        outState?.putInt(INSTANCE_TEXTURE_SIZE, textureSizeLimit)
     }
 
     /** DATA METHODS ___________________________________________________________________________ **/
 
+    // initData(): Initializes the data variables. If the Activity was destroyed and re-created, the
+    // previous data instance is restored. Otherwise the data variables are initialized.
     private fun initData(savedInstanceState: Bundle?) {
-        if (savedInstanceState != null) {
-            // TODO: Restore saved data here.
-        } else {
-            deviceManufacturer = Build.MANUFACTURER
-            deviceModel = Build.MODEL
-
-            memorySize = MemoryUtils.getDeviceMemorySize(this)
-
-            apiLevel = Build.VERSION.SDK_INT
-            androidVersion = Build.VERSION.RELEASE
-
-            textureSizeLimit = OpenGLUtils.maxSupportedTextureSize
-        }
+        deviceManufacturer = savedInstanceState?.getString(INSTANCE_DEVICE_MANUFACTURER) ?:
+                Build.MANUFACTURER
+        deviceModel = savedInstanceState?.getString(INSTANCE_DEVICE_MODEL) ?: Build.MODEL
+        memorySize = savedInstanceState?.getLong(INSTANCE_MEMORY_SIZE) ?:
+                MemoryUtils.getDeviceMemorySize(this)
+        apiLevel = savedInstanceState?.getInt(INSTANCE_API_LEVEL) ?: Build.VERSION.SDK_INT
+        androidVersion = savedInstanceState?.getString(INSTANCE_ANDROID_VERSION) ?:
+                Build.VERSION.RELEASE
+        textureSizeLimit = savedInstanceState?.getInt(INSTANCE_TEXTURE_SIZE) ?:
+                OpenGLUtils.maxSupportedTextureSize
     }
 
     /** VIEW METHODS ___________________________________________________________________________ **/
 
     private fun initText() {
-
+        // TODO: Initialize text properties here.
     }
 
+    // setText(): Sets the data field TextView texts.
     private fun setText() {
         deviceManufacturerValue.text = deviceManufacturer
         deviceModelValue.text = deviceModel

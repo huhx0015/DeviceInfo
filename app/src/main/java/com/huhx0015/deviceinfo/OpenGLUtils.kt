@@ -36,7 +36,8 @@ object OpenGLUtils {
             var maximumTextureSize = 0
             var i = 0
             for (x in IntArray(totalConfigurations[0])) {
-                egl.eglGetConfigAttrib(display, configurationsList[i], EGL10.EGL_MAX_PBUFFER_WIDTH, textureSize)
+                egl.eglGetConfigAttrib(display, configurationsList[i], EGL10.EGL_MAX_PBUFFER_WIDTH,
+                        textureSize)
                 if (maximumTextureSize < textureSize[0]) {
                     maximumTextureSize = textureSize[0]
                 }
