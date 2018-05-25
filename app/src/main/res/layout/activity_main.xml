@@ -32,6 +32,8 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,6 +47,8 @@
                 android:text="$MANUFACTURER_VALUE"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toEndOf="@+id/deviceManufacturerText"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,6 +63,8 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/deviceManufacturerText" />
 
@@ -72,6 +78,8 @@
                 android:text="$MODEL_VALUE"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toEndOf="@+id/deviceModelText"
                 app:layout_constraintTop_toBottomOf="@+id/deviceManufacturerValue" />
 
@@ -86,6 +94,8 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/deviceModelText" />
 
@@ -99,6 +109,8 @@
                 android:text="$MEMORY_VALUE"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toEndOf="@+id/deviceMemorySizeText"
                 app:layout_constraintTop_toBottomOf="@+id/deviceModelValue" />
 
@@ -113,6 +125,8 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/deviceMemorySizeText" />
 
@@ -126,6 +140,8 @@
                 android:text="$ANDROID_VERSION_VALUE"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toEndOf="@+id/deviceAndroidVersionText"
                 app:layout_constraintTop_toBottomOf="@+id/deviceMemorySizeValue" />
 
@@ -140,6 +156,8 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/deviceAndroidVersionText" />
 
@@ -153,6 +171,8 @@
                 android:text="$API_VALUE"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintStart_toEndOf="@+id/deviceApiLevelText"
                 app:layout_constraintTop_toBottomOf="@+id/deviceAndroidVersionValue" />
 
@@ -170,6 +190,8 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -187,6 +209,8 @@
                 android:text="$TEXTURE_LIMIT_VALUE"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/deviceTextureSizeText"
                 app:layout_constraintTop_toBottomOf="@+id/deviceApiLevelValue" />

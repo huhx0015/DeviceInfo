@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initData(savedInstanceState)
-        initText()
         setText()
     }
 
@@ -83,17 +82,16 @@ class MainActivity : AppCompatActivity() {
 
     /** VIEW METHODS ___________________________________________________________________________ **/
 
-    private fun initText() {
-        // TODO: Initialize text properties here.
-    }
-
     // setText(): Sets the data field TextView texts.
     private fun setText() {
-        deviceManufacturerValue.text = deviceManufacturer
+        deviceManufacturerValue.text = deviceManufacturer.toUpperCase()
         deviceModelValue.text = deviceModel
-        deviceMemorySizeValue.text = memorySize.toString()
-        deviceAndroidVersionValue.text = androidVersion
-        deviceApiLevelValue.text = apiLevel.toString()
-        deviceTextureSizeValue.text = textureSizeLimit.toString()
+        deviceMemorySizeValue.text = String.format(getString(R.string.memory_value),
+                memorySize)
+        deviceAndroidVersionValue.text = String.format(getString(R.string.android_value),
+                androidVersion)
+        deviceApiLevelValue.text = String.format(getString(R.string.api_value), apiLevel)
+        deviceTextureSizeValue.text = String.format(getString(R.string.texture_value),
+                textureSizeLimit, textureSizeLimit)
     }
 }
