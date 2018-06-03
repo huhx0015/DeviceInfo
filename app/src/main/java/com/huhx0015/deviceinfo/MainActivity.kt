@@ -73,11 +73,29 @@ class MainActivity : AppCompatActivity() {
         deviceModel = savedInstanceState?.getString(INSTANCE_DEVICE_MODEL) ?: Build.MODEL
         memorySize = savedInstanceState?.getLong(INSTANCE_MEMORY_SIZE) ?:
                 MemoryUtils.getDeviceMemorySize(this)
-        apiLevel = savedInstanceState?.getInt(INSTANCE_API_LEVEL) ?: Build.VERSION.SDK_INT
+
+        memorySize = if (savedInstanceState != null &&
+                savedInstanceState.getLong(INSTANCE_MEMORY_SIZE) != 0L) {
+            savedInstanceState.getLong(INSTANCE_MEMORY_SIZE)
+        } else {
+            MemoryUtils.getDeviceMemorySize(this)
+        }
+        apiLevel = if (savedInstanceState != null &&
+                savedInstanceState.getInt(INSTANCE_API_LEVEL) != 0) {
+            savedInstanceState.getInt(INSTANCE_API_LEVEL)
+        } else {
+            Build.VERSION.SDK_INT
+        }
+
         androidVersion = savedInstanceState?.getString(INSTANCE_ANDROID_VERSION) ?:
                 Build.VERSION.RELEASE
-        textureSizeLimit = savedInstanceState?.getInt(INSTANCE_TEXTURE_SIZE) ?:
-                OpenGLUtils.maxSupportedTextureSize
+
+        textureSizeLimit = if (savedInstanceState != null &&
+                savedInstanceState.getInt(INSTANCE_TEXTURE_SIZE) != 0) {
+            savedInstanceState.getInt(INSTANCE_TEXTURE_SIZE)
+        } else {
+            OpenGLUtils.maxSupportedTextureSize
+        }
     }
 
     /** VIEW METHODS ___________________________________________________________________________ **/
