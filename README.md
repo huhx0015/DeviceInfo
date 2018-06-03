@@ -3,6 +3,9 @@ Device Info
 
 DEVELOPER: huhx0015
 
+### DEVICE INFO
+![deviceinfo_preview](https://user-images.githubusercontent.com/1645482/40882337-a088d2f2-6693-11e8-8d0c-55c38895d8a9.png)
+
 ## Description
 
 Device Info: A basic Android app written in Kotlin that displays basic information about the current device, including GPU texture size limits. Useful for determining the maximum pixel width & height limits for ImageViews on certain devices.
