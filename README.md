@@ -4,7 +4,7 @@ Device Info
 DEVELOPER: huhx0015
 
 ### DEVICE INFO
-![deviceinfo_preview](https://user-images.githubusercontent.com/1645482/40882337-a088d2f2-6693-11e8-8d0c-55c38895d8a9.png)
+![deviceinfo_preview](https://user-images.githubusercontent.com/1645482/40882356-2c00c3c6-6694-11e8-8420-75b9d39eb06f.png)
 
 ## Description
 
